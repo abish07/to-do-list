@@ -1,6 +1,7 @@
 let add = document.querySelector("#add");
 let addTask = document.querySelector(".addTask");
-let taskList = document.querySelector(".taskList")
+let taskList = document.querySelector(".taskList");
+let savedTasksContainer = document.querySelector(".savedTasksContainer");
 
 let counter=1;
 
@@ -38,7 +39,7 @@ add.addEventListener("click", ()=>{
     wrapper.appendChild(input);
     wrapper.appendChild(save);
     wrapper.appendChild(remove);
-    wrapper.appendChild(head);
+    savedTasksContainer.appendChild(head);
 
     taskList.appendChild(wrapper);
     input.focus();
