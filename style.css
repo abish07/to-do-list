@@ -2,17 +2,32 @@
     margin: 0px;
     padding: 0px;
 }
-.container{
-    background-color: aqua;
+.containers{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    margin-left: 30%;
-    margin-top: 10%;
-    width: 40%;
     height: auto;
+}
+.left-container{
+    background-color: rgb(156, 156, 156);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:100px 0px;
+}
+.right-container{
+    background-color: rgb(152, 173, 173);
+    width: 50%;
+    padding:100px 0px;
+}
+.right-container h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.right-container ol{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
 }
 .content{
     display: flex;

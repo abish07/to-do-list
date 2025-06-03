@@ -1,10 +1,9 @@
 let add = document.querySelector("#add");
 let addTask = document.querySelector(".addTask");
 let taskList = document.querySelector(".taskList");
-let savedTasksContainer = document.querySelector(".savedTasksContainer");
+let rightContainer = document.querySelector(".right-container");
 
 let counter=1;
-
 add.addEventListener("click", ()=>{
     let taskId = "Task" + counter;
     let wrapper = document.createElement("div");
@@ -12,8 +11,9 @@ add.addEventListener("click", ()=>{
 
     let label = document.createElement("label");
     label.textContent="Task: " + counter;
+    let taskNumber = "Task " + counter + ":  " ;
     counter++;
-
+    
     let input = document.createElement("input");
     input.type="text";
     input.placeholder="Enter the Task";
@@ -24,23 +24,25 @@ add.addEventListener("click", ()=>{
         let inputTask = input.value;
         if(inputTask.trim()!== ""){
             localStorage.setItem(taskId, inputTask);
-            head.textContent = inputTask;
+            tasks.textContent = taskNumber + inputTask;
         }
     })
-    let head = document.createElement("h1");
+    let tasks = document.createElement("ol");
+    tasks.classList.add("unorderlist-of-task");
     let remove = document.createElement("button");
     remove.textContent="Delete";
-
+    
     remove.addEventListener("click", ()=>{
         localStorage.removeItem(taskId);
         wrapper.remove();
+        tasks.remove();
     })
     wrapper.appendChild(label);
     wrapper.appendChild(input);
     wrapper.appendChild(save);
     wrapper.appendChild(remove);
-    savedTasksContainer.appendChild(head);
-
+    rightContainer.appendChild(tasks);
+    
     taskList.appendChild(wrapper);
     input.focus();
 })
